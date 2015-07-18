@@ -28,11 +28,15 @@ div.wrapper {
     padding:20px;
 }
 
-h1 {
+h1#logo {
     color: #F2CE1D;
-    width: 80%;
+    width: 190px;
     margin: 20px;
     text-align: left;
+}
+
+h1#logo:hover {
+    cursor: pointer;
 }
 
 #nav {
