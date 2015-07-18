@@ -19,8 +19,6 @@ get "/view_users" do
   json json_array
 end
 
-
-
 post "/save-user" do
   password = BCrypt::Password.create(params["password"])
   new_user = User.create({email: params["email"], password:  password})
