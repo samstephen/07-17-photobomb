@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Photobomb</title>
+  <link rel="stylesheet" type="text/css" href="/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/global.css">
 </head>
 <body>
-
+<%= erb :"main/header" %>
+<div class="wrapper">
 <%= yield %>
+</div>
 <script src="/global.js" type="text/javascript"></script>
 <script src="/jquery.js" type="text/javascript"></script>
 </body>
