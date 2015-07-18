@@ -1,13 +1,13 @@
 body {
     background:#EDEDED;
     font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-    color:#222;
+    color:#2c3e50;
     font-size:16px;
 }
 
 header {
-    background: #373b41;
-    border-color: #0a0a0a;
+    background: #34495e;
+    border-color: #2c3e50;
     margin: 0 0 30px 0;
     padding: 5px 0 0 0;
     width: 100%;
@@ -17,12 +17,10 @@ header {
 div.wrapper {
     position: relative;
     float: none;
-
     width:700px;
     margin:30px auto;
     border:1px solid silver;
-    background:white;
-
+    background: #ecf0f1;
     border-radius:0.3em;
     box-shadow:0 0 5px rgba(0,0,0,0.3);
     padding:20px;
@@ -47,24 +45,28 @@ h1#logo:hover {
 }
 
 nav {
-    background: #0A0A0A;
+    background: #2c3e50;
     text-align: center;
-    padding: 10px 0;
-    margin: 20px 0 0;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul {
     list-style: none;
-    margin: 0 10px;
+    margin: 0;
     padding: 0;
 }
 
 nav li {
     display: block;
+    border-bottom: 1px solid #34495e;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
 }
 
 nav a, nav a:visited {
-    color: #cf7777;
+    color: #f1c40f;
 }
 
 nav a {
@@ -107,7 +109,7 @@ h6 {
     text-transform:uppercase;
     font-size:15px;
     font-weight:bold;
-    color:#666;
+    color:#7f8c8d;
     border-bottom:1px solid silver;
     padding-bottom:10px;
     margin-bottom:10px;
@@ -167,6 +169,15 @@ div.btn-container {
     padding-left:10px;
 }
 
+
+form#add-user-form {
+    visibility: hidden;
+}
+
+button#close {
+    position: relative;
+    float: right;
+}
 
 
 footer{
