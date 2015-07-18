@@ -1,5 +1,5 @@
 get '/home' do
-  erb :'/main/home'
+  erb :'main/home'
 end
 
 get '/login' do
