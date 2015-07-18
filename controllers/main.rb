@@ -10,8 +10,19 @@ get "/add-user-form" do
   erb :"user/add-user-form"
 end
 
-post "/save_user" do
+get "/view_users" do
+  users = User.all
+  json_array = []
+  users.each do |d|
+    json_array << d.json_format
+  end
+  json json_array
+end
+
+
+
+post "/save-user" do
   password = BCrypt::Password.create(params["password"])
-  new_user = User.create({email:  params["email"], password:  password})
+  new_user = User.create({email: params["email"], password:  password})
   json new_user.json_format
 end

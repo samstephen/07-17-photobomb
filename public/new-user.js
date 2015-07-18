@@ -3,7 +3,7 @@
  */
 
 
-var users = $.getJSON("/api/view_users", function() {
+var users = $.getJSON("/view_users", function() {
     users = users.responseJSON;
 });
 
@@ -13,13 +13,13 @@ function addUser(event) {
     // event.preventDefault();
 
     // creates variable containing the form
-    var form = document.getElementById("add_user_form");
+    var form = document.getElementById("add-user-form");
 
     // creates new XHR request
     var request = new XMLHttpRequest();
 
     // opens new POST request
-    request.open("POST", "/api/add_user");
+    request.open("POST", "/save-user");
 
     // sends info from form (via FormData) to previously opened POST route
     request.responseType = "json";
