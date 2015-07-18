@@ -3,9 +3,9 @@
  */
 
 
-var users = $.getJSON("/view_users", function() {
-    users = users.responseJSON;
-});
+//var users = $.getJSON("/view_users", function() {
+//    users = users.responseJSON;
+//});
 
 document.getElementById("submitter").addEventListener("click", addUser);
 
