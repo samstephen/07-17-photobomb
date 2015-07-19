@@ -15,10 +15,23 @@ end
 
 get "/login-validation" do
 
+    # @user = User.find_by_email(params[:email])
+    # if @user.password == params[:password]
+    #   give_token
+    # else
+    #   redirect_to "main/login"
+    # end
 
 
-user = User.find_by_email!(params["email"])
-  binding.pry
+    @user = User.find_by_email!(params["username"])
+
+      if @user[:passwordhash] == BCrypt::Engine.hash_secret(params["password"])
+        session[:username] = params[:username]
+        redirect "/"
+      end
+    end
+    haml :error
+
 
 
 end

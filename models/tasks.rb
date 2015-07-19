@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   attr_reader :password_hash
 
+  has_secure_password
+
   include BCrypt
   # extend DatabaseClassMethods
   # include DatabaseInstanceMethods
@@ -21,32 +23,28 @@ class User < ActiveRecord::Base
   #   @password = args["password"]
   # end
 
-  # def forgot_password
-  #   @user = User.find_by_email(params[:email])
-  #   random_password = Array.new(10).map { (65 + rand(58)).chr }.join
-  #   @user.password = random_password
-  #   @user.save!
-  #   Mailer.create_and_deliver_password_change(@user, random_password)
-  # end
-  #
-  #
-  # def login
-  #   @user = User.find_by_email(params[:email])
-  #   if @user.password == params[:password]
-  #     give_token
-  #   else
-  #     redirect_to home_url
-  #   end
-  # end
-  #
-  # def password
-  #   @password ||= Password.new(password_hash)
-  # end
-  #
-  # def password=(new_password)
-  #   @password = Password.create(new_password)
-  #   self.password_hash = @password
-  # end
+
+
+  def forgot_password
+    @user = User.find_by_email!(params[:email])
+    random_password = Array.new(10).map { (65 + rand(58)).chr }.join
+    @user.password = random_password
+    @user.save!
+    Mailer.create_and_deliver_password_change(@user, random_password)
+  end
+
+
+  def password
+    binding.pry
+
+
+    @password ||= Password.new(password_hash)
+  end
+
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_hash = @password
+  end
 
 
   def json_format
