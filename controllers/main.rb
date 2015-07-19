@@ -1,14 +1,12 @@
-set :sessions => true
-
-before do
-  if session["user_id"]
-    @user = User.find(session["user_id"])
-  end
-end
-
-
 
 get '/home' do
+  if session[:user_id]
+  else
+    redirect "/login"
+  end
+
+
+
   erb :'main/home'
 end
 
@@ -17,6 +15,22 @@ get '/login' do
 end
 
 get "/login-validation" do
+
+  username = params["username"]
+  a = ActiveRecord::Base.connection.execute("SELECT password FROM users WHERE email = '#{username}';")
+
+  binding.pry
+
+  a = a[0]["password"]
+
+  user_password = BCrypt::Password.new(a)
+
+  if params["password"] == user_password
+    session[:user_id] = 1
+  else
+    session[:user_id] = 0
+  end
+
 
 end
 
