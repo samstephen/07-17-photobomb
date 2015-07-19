@@ -18,6 +18,7 @@ link.addEventListener('click', showModal);
 
 function hideModal() {
     document.getElementById('add-user-form').style.display = 'none';
+    $("#confirm")[0].style.display = 'none';
 }
 
 var close = document.getElementById('close');

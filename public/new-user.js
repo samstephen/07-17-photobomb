@@ -28,6 +28,7 @@ function addUser(event) {
 
     request.addEventListener("load", function() {
         var confirm = this.response.email + " has been registered!";
+        $("#confirm")[0].style.display = 'block';
         $("#confirm")[0].innerText = confirm;
     });
 }

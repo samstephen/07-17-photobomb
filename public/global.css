@@ -187,6 +187,10 @@ footer{
     margin: 10px auto;
 }
 
+p#confirm {
+    display: none;
+}
+
 
 
 
