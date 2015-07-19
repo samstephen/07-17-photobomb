@@ -1,7 +1,15 @@
-<div>
-  <h2>Login</h2>
-</div>
+<link rel="stylesheet" type="text/css" href="/login.css">
 
+<div id="login">
 
+  <form action="javascript:void(0);" method="post">
+
+    <span class="fontawesome-user"></span><input type="text" required value="Username" onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value='' "> <!-- JS because of IE support; better: placeholder="Username" -->
+    <span class="fontawesome-lock"></span><input type="password" required value="Password" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "> <!-- JS because of IE support; better: placeholder="Password" -->
+    <input type="submit" value="Login">
+
+  </form>
+
+</div> <!-- end login -->
 
 

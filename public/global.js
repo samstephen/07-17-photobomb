@@ -1,7 +1,3 @@
-
-
-
-
 function goHome() {
     window.location.replace("/home");
 }
