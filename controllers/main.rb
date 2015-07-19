@@ -1,8 +1,8 @@
 
-
+# enable :sessions
 
 get '/home' do
-  if session[:user_id]
+  if session[:user_id] != nil
   else
     redirect "/login"
   end
@@ -23,14 +23,42 @@ get "/login-validation" do
     # end
 
 
-    @user = User.find_by_email!(params["username"])
+    @user = User.find_by_email!(params["email"])
 
-      if @user[:passwordhash] == BCrypt::Engine.hash_secret(params["password"])
-        session[:username] = params[:username]
-        redirect "/"
+    # entered_email = params["users"]["email"]
+    # user_email = User.find_email(entered_email)
+
+
+
+    if !@user.nil?
+      @valid = true
+      given_pw = params["password"]
+      actual_pw = BCrypt::Password.new(@user.password)
+      if actual_pw == given_pw
+
+        session[:id] = @user.id
+
+
+        binding.pry
+
+        erb :"main/home"
+      else
+        @valid = false
+        erb :"main/login"
       end
+    else
+      @valid = false
+      erb :"main/login"
     end
-    haml :error
+
+
+
+
+
+      # if @user[:passwordhash] == BCrypt::Engine.hash_secret(params["password"])
+      #   session[:username] = params[:username]
+      #   redirect "/"
+      # end
 
 
 

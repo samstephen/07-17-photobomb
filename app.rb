@@ -8,7 +8,6 @@ require 'sinatra'
 require 'sinatra/json'
 require 'bcrypt'
 
-
 #setting up database
 configure :development do
   require 'sqlite3'
