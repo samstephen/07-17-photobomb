@@ -1,9 +1,23 @@
+set :sessions => true
+
+before do
+  if session["user_id"]
+    @user = User.find(session["user_id"])
+  end
+end
+
+
+
 get '/home' do
   erb :'main/home'
 end
 
 get '/login' do
   erb :'main/login'
+end
+
+get "/login-validation" do
+
 end
 
 get "/add-user-form" do
