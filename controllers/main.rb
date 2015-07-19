@@ -1,12 +1,11 @@
 
+
+
 get '/home' do
   if session[:user_id]
   else
     redirect "/login"
   end
-
-
-
   erb :'main/home'
 end
 
@@ -16,23 +15,36 @@ end
 
 get "/login-validation" do
 
-  username = params["username"]
-  a = ActiveRecord::Base.connection.execute("SELECT password FROM users WHERE email = '#{username}';")
 
+
+user = User.find_by_email!(params["email"])
   binding.pry
-
-  a = a[0]["password"]
-
-  user_password = BCrypt::Password.new(a)
-
-  if params["password"] == user_password
-    session[:user_id] = 1
-  else
-    session[:user_id] = 0
-  end
 
 
 end
+
+
+
+  # username = params["username"]
+  # a = ActiveRecord::Base.connection.execute("SELECT password FROM users WHERE email = '#{username}';")
+  #
+  # a = a[0]["password"]
+  #
+  # user_password = BCrypt::Password.new(a)
+  #
+  # binding.pry
+  #
+  #
+  #
+  # if params["password"] == user_password
+  #   session[:user_id] = 1
+  #   erb :"main/home"
+  # else
+  #   erb :"main/login"
+  # end
+
+
+
 
 get "/add-user-form" do
   erb :"user/add-user-form"

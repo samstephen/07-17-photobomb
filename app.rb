@@ -7,7 +7,7 @@ require 'active_record'
 require 'sinatra'
 require 'sinatra/json'
 require 'bcrypt'
-set :sessions, true
+
 
 #setting up database
 configure :development do
