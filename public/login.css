@@ -12,12 +12,11 @@ input {
 }
 
 
-
-
 #login {
     margin: 50px auto;
     width: 242px;
     text-align: center;
+    float: none;
 }
 
 #login span {
@@ -37,10 +36,10 @@ input {
 }
 
 #login input[type="text"] {
-    background: #dedede;
-    border-top: 1px solid #000;
-    border-right: 1px solid #000;
-    border-left: 1px solid #000;
+    background: #D5DBDF;
+    border-top: 1px solid #2c3e50;
+    border-right: 1px solid #2c3e50;
+    border-left: 1px solid #2c3e50;
     border-radius: 5px 5px 0 0;
     color: #363636;
     padding-left: 36px;
@@ -48,11 +47,11 @@ input {
 }
 
 #login input[type="password"] {
-    background-color: #dedede;
-    border-top: 1px solid #828282;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-left: 1px solid #000;
+    background-color: #D5DBDF;
+    border-top: 1px solid #bdc3c7;
+    border-right: 1px solid #2c3e50;
+    border-bottom: 1px solid #2c3e50;
+    border-left: 1px solid #2c3e50;
     border-radius: 0 0 5px 5px;
     color: #363636;
     margin-bottom: 20px;
@@ -61,18 +60,18 @@ input {
 }
 
 #login input[type="submit"] {
-    background: #e14d4d;
-    border: 1px solid #391515;
+    background: #f39c12;
+    border: 1px solid #34495e;
     border-radius: 5px;
     color: #fff;
     font-weight: bold;
     line-height: 48px;
     text-align: center;
     text-transform: uppercase;
-    width: 240px;
+    width: 245px;
 }
 
 #login input[type="submit"]:hover {
-    background: #f15958;
+    background: #f1c40f;
 }
 
